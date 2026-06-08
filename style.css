@@ -99,3 +99,41 @@ input,textarea{
   .app-shell{padding:15px;padding-bottom:90px}
   .hero{align-items:flex-start}
 }
+.hero{
+  max-width:900px;
+  margin:30px auto;
+}
+
+.smart-grid,
+.quick-actions,
+.panel{
+  max-width:900px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.quick-actions button{
+  min-width:120px;
+  margin:4px;
+  color:#111;
+}
+
+#themeBtn{
+  background:#fff;
+  color:#111;
+}
+
+.hero h1{
+  margin:0;
+  font-size:34px;
+}
+
+.hero p{
+  margin:6px 0;
+}
+
+@media(max-width:700px){
+  .hero{
+    margin:15px;
+  }
+}
