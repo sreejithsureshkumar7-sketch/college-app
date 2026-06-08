@@ -5,86 +5,97 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Smart College App</title>
   <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="style.css" />
-  <meta name="theme-color" content="#1e40af" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header class="topbar">
-    <div>
-      <h1>Smart College</h1>
-      <p>Student Updates • Events • Academics</p>
-    </div>
-    <button id="themeBtn">🌙</button>
-  </header>
-
-  <main>
-    <section class="profile-card">
+  <div class="app-shell">
+    <header class="hero">
       <div class="avatar">S</div>
       <div>
-        <h2 id="studentName">Sreejith</h2>
+        <h1>Smart College App</h1>
         <p>BCA • II Year • Reg No: 101</p>
-        <p class="badge">Attendance: <span id="attendance">86%</span></p>
+        <span class="pill">Attendance: <b id="attendanceText">86%</b></span>
       </div>
+      <button id="themeBtn" class="icon-btn">🌙</button>
+    </header>
+
+    <section class="smart-grid">
+      <article class="glass"><h3>Today's Class</h3><p>JavaScript • 10:00 AM</p></article>
+      <article class="glass"><h3>Next Event</h3><p id="nextEvent">Tech Fest 2026</p></article>
+      <article class="glass"><h3>Assignment</h3><p>DBMS due in 2 days</p></article>
     </section>
 
-    <section class="grid">
-      <button onclick="showPage('updates')">📢 Updates</button>
-      <button onclick="showPage('events')">🎉 Events</button>
-      <button onclick="showPage('academics')">📚 Academics</button>
-      <button onclick="showPage('attendancePage')">📝 Attendance</button>
-      <button onclick="showPage('gallery')">📸 Gallery</button>
-      <button onclick="showPage('idcard')">🎓 ID Card</button>
-    </section>
+    <nav class="quick-actions">
+      <button data-tab="updates">📢 Updates</button>
+      <button data-tab="events">🎉 Events</button>
+      <button data-tab="academics">📚 Academics</button>
+      <button data-tab="attendance">📝 Attendance</button>
+      <button data-tab="idcard">🎓 ID Card</button>
+      <button data-tab="admin">🔐 Admin</button>
+    </nav>
 
-    <section id="updates" class="page active">
-      <h2>College Updates</h2>
-      <div id="updatesList" class="list"></div>
-    </section>
+    <main>
+      <section id="updates" class="tab active">
+        <h2>College Updates</h2>
+        <div id="updatesList" class="list"></div>
+      </section>
 
-    <section id="events" class="page">
-      <h2>Events</h2>
-      <div id="eventsList" class="list"></div>
-    </section>
+      <section id="events" class="tab">
+        <h2>Events & Registration</h2>
+        <div id="eventsList" class="list"></div>
+      </section>
 
-    <section id="academics" class="page">
-      <h2>Academics</h2>
-      <div class="card"><h3>Today Timetable</h3><p>9:30 AM - Web Development</p><p>11:00 AM - Database Management</p><p>1:30 PM - Python Lab</p></div>
-      <div class="card"><h3>Assignments</h3><p>Submit UI/UX report before Friday.</p></div>
-      <div class="card"><h3>Internal Marks</h3><p>Web Development: 42/50</p><p>DBMS: 39/50</p></div>
-    </section>
+      <section id="academics" class="tab">
+        <h2>Academics</h2>
+        <div class="card"><b>Timetable</b><p>Mon: Web Dev, DBMS, English</p></div>
+        <div class="card"><b>Notes</b><p>HTML, CSS, JavaScript, DBMS PDF materials.</p></div>
+        <div class="card"><b>Internal Marks</b><p>Web Dev: 89 | DBMS: 82 | English: 78</p></div>
+      </section>
 
-    <section id="attendancePage" class="page">
-      <h2>Attendance Report</h2>
-      <div class="card big"><h3>Current Attendance</h3><p id="attendanceBig">86%</p></div>
-    </section>
+      <section id="attendance" class="tab">
+        <h2>QR Attendance</h2>
+        <div class="qr-box">QR</div>
+        <p>Scan this QR for event/class attendance demo.</p>
+        <div class="progress"><span style="width:86%"></span></div>
+      </section>
 
-    <section id="gallery" class="page">
-      <h2>Gallery</h2>
-      <div class="gallery-box">
-        <div>College Day</div><div>Sports Day</div><div>Tech Fest</div><div>Cultural Fest</div>
-      </div>
-    </section>
+      <section id="idcard" class="tab">
+        <h2>Digital Student ID</h2>
+        <div class="id-card">
+          <div class="avatar big">S</div>
+          <h3>Sreejith</h3>
+          <p>BCA • II Year</p>
+          <p>Reg No: 101</p>
+          <div class="mini-qr">▦</div>
+        </div>
+      </section>
 
-    <section id="idcard" class="page">
-      <h2>Digital ID Card</h2>
-      <div class="id-card">
-        <div class="avatar large">S</div>
-        <h3>Sreejith</h3>
-        <p>BCA • II Year</p>
-        <p>Reg No: 101</p>
-        <div class="qr">QR</div>
-      </div>
-    </section>
-  </main>
+      <section id="admin" class="tab">
+        <h2>Admin Panel</h2>
+        <div class="admin-box">
+          <input id="updateTitle" placeholder="Update title" />
+          <textarea id="updateMsg" placeholder="Update message"></textarea>
+          <button id="addUpdateBtn">Add Update</button>
+        </div>
+        <div class="admin-box">
+          <input id="eventTitle" placeholder="Event title" />
+          <input id="eventDate" type="date" />
+          <input id="eventVenue" placeholder="Venue" />
+          <button id="addEventBtn">Add Event</button>
+        </div>
+      </section>
+    </main>
 
-  <nav class="bottom-nav">
-    <button onclick="showPage('updates')">Home</button>
-    <button onclick="showPage('events')">Events</button>
-    <button onclick="showPage('academics')">Academics</button>
-    <button onclick="showPage('idcard')">Profile</button>
-  </nav>
+    <button id="chatToggle" class="chat-toggle">🤖</button>
+    <div id="chatBox" class="chat-box hidden">
+      <h3>AI Student Help</h3>
+      <div id="chatMessages"></div>
+      <input id="chatInput" placeholder="Ask: exam, attendance, event..." />
+    </div>
+  </div>
 
-  <script type="module" src="firebase.js"></script>
-  <script src="app.js"></script>
+  <script type="module" src="js/firebase.js"></script>
+  <script type="module" src="js/app.js"></script>
+  <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('service-worker.js')}</script>
 </body>
 </html>
