@@ -1,5 +1,5 @@
 const CACHE_NAME = 'college-app-v1';
-const files = ['index.html','css/style.css','js/app.js','js/firebase.js','manifest.json'];
+const files = ['index.html','style.css','app.js','firebase.js','manifest.json'];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(files)));
 });
