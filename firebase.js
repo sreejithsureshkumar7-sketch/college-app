@@ -3,13 +3,13 @@ import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10
 
 // Firebase Console-la irundhu unga config paste pannunga
 const firebaseConfig = {
-  apiKey: "PASTE_YOUR_API_KEY",
-  authDomain: "PASTE_PROJECT.firebaseapp.com",
-  databaseURL: "https://PASTE_PROJECT-default-rtdb.firebaseio.com",
-  projectId: "PASTE_PROJECT",
-  storageBucket: "PASTE_PROJECT.appspot.com",
-  messagingSenderId: "PASTE_SENDER_ID",
-  appId: "PASTE_APP_ID"
+ apiKey: "AIzaSyCwcgXc8fRAQTM36Tjwnx94B1vbCQ19mK8",
+  authDomain: "college-app-6feb1.firebaseapp.com",
+  projectId: "college-app-6feb1",
+  storageBucket: "college-app-6feb1.firebasestorage.app",
+  messagingSenderId: "643620831036",
+  appId: "1:643620831036:web:309d57c55ec201cb0ee839",
+  measurementId: "G-7Z6HXF5KM8"
 };
 
 const app = initializeApp(firebaseConfig);
