@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart College App</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/style.css" />
+  <meta name="theme-color" content="#1e40af" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Smart College</h1>
+      <p>Student Updates • Events • Academics</p>
+    </div>
+    <button id="themeBtn">🌙</button>
+  </header>
+
+  <main>
+    <section class="profile-card">
+      <div class="avatar">S</div>
+      <div>
+        <h2 id="studentName">Sreejith</h2>
+        <p>BCA • II Year • Reg No: 101</p>
+        <p class="badge">Attendance: <span id="attendance">86%</span></p>
+      </div>
+    </section>
+
+    <section class="grid">
+      <button onclick="showPage('updates')">📢 Updates</button>
+      <button onclick="showPage('events')">🎉 Events</button>
+      <button onclick="showPage('academics')">📚 Academics</button>
+      <button onclick="showPage('attendancePage')">📝 Attendance</button>
+      <button onclick="showPage('gallery')">📸 Gallery</button>
+      <button onclick="showPage('idcard')">🎓 ID Card</button>
+    </section>
+
+    <section id="updates" class="page active">
+      <h2>College Updates</h2>
+      <div id="updatesList" class="list"></div>
+    </section>
+
+    <section id="events" class="page">
+      <h2>Events</h2>
+      <div id="eventsList" class="list"></div>
+    </section>
+
+    <section id="academics" class="page">
+      <h2>Academics</h2>
+      <div class="card"><h3>Today Timetable</h3><p>9:30 AM - Web Development</p><p>11:00 AM - Database Management</p><p>1:30 PM - Python Lab</p></div>
+      <div class="card"><h3>Assignments</h3><p>Submit UI/UX report before Friday.</p></div>
+      <div class="card"><h3>Internal Marks</h3><p>Web Development: 42/50</p><p>DBMS: 39/50</p></div>
+    </section>
+
+    <section id="attendancePage" class="page">
+      <h2>Attendance Report</h2>
+      <div class="card big"><h3>Current Attendance</h3><p id="attendanceBig">86%</p></div>
+    </section>
+
+    <section id="gallery" class="page">
+      <h2>Gallery</h2>
+      <div class="gallery-box">
+        <div>College Day</div><div>Sports Day</div><div>Tech Fest</div><div>Cultural Fest</div>
+      </div>
+    </section>
+
+    <section id="idcard" class="page">
+      <h2>Digital ID Card</h2>
+      <div class="id-card">
+        <div class="avatar large">S</div>
+        <h3>Sreejith</h3>
+        <p>BCA • II Year</p>
+        <p>Reg No: 101</p>
+        <div class="qr">QR</div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button onclick="showPage('updates')">Home</button>
+    <button onclick="showPage('events')">Events</button>
+    <button onclick="showPage('academics')">Academics</button>
+    <button onclick="showPage('idcard')">Profile</button>
+  </nav>
+
+  <script type="module" src="js/firebase.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
